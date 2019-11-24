@@ -30,15 +30,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'evalhubapp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rolepermissions',
     'bootstrapform',
+    'crispy_forms',
     'survey',
-    'evalhubapp',
 ]
 
 MIDDLEWARE = [
@@ -121,6 +123,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CHOICES_SEPARATOR = ','
+
+AUTH_USER_MODEL = 'evalhubapp.User'
+ROLEPERMISSIONS_MODULE = 'evalhub.roles'
+ROLEPERMISSIONS_REGISTER_ADMIN = True
+LOGIN_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Configure Django App for Heroku.
 import django_heroku

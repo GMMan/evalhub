@@ -1,0 +1,30 @@
+{% extends 'evalhubapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log in to EvalHub{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-sm-12 col-md-6 border rounded p-3">
+        <span class="text-center"><h1>Login</h1></span>
+        <div class="my-5"></div>
+        {% if next %}
+            {% if user.is_authenticated %}
+                <div class="alert alert-warning" role="alert">
+                    Your account doesn't have access to this page. To proceed,
+                    please login with an account that has access.
+                </div>
+            {% else %}
+                <div class="alert alert-info" role="alert">
+                    Please login to see this page.
+                </div>
+            {% endif %}
+        {% endif %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <div class="text-center"><button type="submit" value="login" class="btn btn-primary">Login</button></div>
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+    </div>
+</div>
+{% endblock %}

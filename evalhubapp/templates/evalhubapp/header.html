@@ -5,5 +5,12 @@
       <a class="navbar-brand" href="{% url 'index' %}">
           <img src="{% static 'img/evalhub_wordmark.png' %}" alt="EvalHub" style="height: 36px; width: auto;">
       </a>
+      <span class="navbar-text">
+          {% if user.is_authenticated %}
+              Welcome{% if user.first_name %}, {{ user.first_name }}{% endif %}. <a href="{% url 'logout' %}">Log out</a>
+          {% else %}
+              <a href="{% url 'login' %}">Log in</a>
+          {% endif %}
+      </span>
     </nav>
 </div>

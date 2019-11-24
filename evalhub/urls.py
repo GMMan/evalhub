@@ -27,6 +27,7 @@ admin.site.site_header = ugettext_lazy('EvalHub admin')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', evalhub_views.index, name='index'),
+    path('auth/', include('django.contrib.auth.urls')),
 ]
 
 if 'survey' in settings.INSTALLED_APPS:
