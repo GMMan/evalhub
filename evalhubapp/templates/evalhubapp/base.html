@@ -12,9 +12,14 @@
   </head>
   <body>
     {% include 'evalhubapp/header.html' %}
-    {% block content %}
-        <p>Coming soon</p>
-    {% endblock %}
+    <div class="container" id="main-content">
+      {% block content %}
+      <div class="jumbotron">
+        <h1 class="display-4">Coming soon!</h1>
+        <p class="lead">This page is a work in progress.</p>
+      </div>
+      {% endblock %}
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

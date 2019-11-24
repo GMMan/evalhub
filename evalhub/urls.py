@@ -21,7 +21,7 @@ from evalhubapp import views as evalhub_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', evalhub_views.index),
+    path('', evalhub_views.index, name='index'),
 ]
 
 if 'survey' in settings.INSTALLED_APPS:
