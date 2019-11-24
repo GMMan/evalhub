@@ -17,13 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
-import survey
-
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
 
 if 'survey' in settings.INSTALLED_APPS:
     urlpatterns += [
-        path(r'^evaluations/', include('survey.urls'))
+        path('evaluations/', include('survey.urls'))
     ]
