@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
+from django.utils.translation import ugettext_lazy
 
 from evalhubapp import views as evalhub_views
+
+# Set admin titles
+admin.site.site_title = ugettext_lazy('EvalHub')
+admin.site.site_header = ugettext_lazy('EvalHub admin')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
