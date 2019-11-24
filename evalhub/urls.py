@@ -17,8 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
+from evalhubapp import views as evalhub_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', evalhub_views.index),
 ]
 
 if 'survey' in settings.INSTALLED_APPS:

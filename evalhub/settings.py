@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrapform',
     'survey',
+    'evalhubapp',
 ]
 
 MIDDLEWARE = [
