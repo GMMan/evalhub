@@ -1,9 +1,19 @@
 {% load static %}
 
 <div class="container">
-    <nav class="navbar navbar-light bg-light rounded-bottom mb-3">
-      <a class="navbar-brand" href="{% url 'index' %}">
-          <img src="{% static 'img/evalhub_wordmark.png' %}" alt="EvalHub" style="height: 36px; width: auto;">
-      </a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-bottom mb-3">
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'img/evalhub_wordmark.png' %}" alt="EvalHub" style="height: 36px; width: auto;">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </div>
