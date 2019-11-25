@@ -1,17 +1,23 @@
 {% extends 'evalhubapp/base.html' %}
 {% block fullwidth %}
   <div class="masthead">
-    <div class="row h-100 align-items-center">
+    <div class="row no-gutters h-100 align-items-center">
       <div class="col-12 text-center">
         <h1 class="font-weight-light">Welcome to EvalHub!</h1>
-        <p class="lead">If you are a daycare manager, please contact your evaluator for an invite link.</p>
-        <p class="lead">If you are an evaluator, please <a href="{% url 'login' %}">login</a> or <a href="#">register</a> above.</p>
+        <p class="lead">
+          If you are a daycare manager, <a href="{% url 'login' %}">click here</a> to log in.<br>
+          If you don't have an account, please contact your evaluator for an invite link.
+        </p>
+        <p class="lead">
+          If you are an evaluator, please <a href="{% url 'login' %}">log in</a>.
+        </p>
       </div>
     </div>
   </div>
 
   <style>
     .masthead {
+      margin-top: -90px;
       height: 100vh;
       min-height: 500px;
       background-image: url('/static/img/masthead.jpg');
