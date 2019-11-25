@@ -21,7 +21,7 @@
                     {% if user.is_authenticated %}
                         Welcome{% if user.first_name %}, {{ user.first_name }}{% endif %}. <a href="{% url 'logout' %}">Log out</a>
                     {% else %}
-                        <a href="{% url 'login' %}">Log in</a>
+                        <a class="nav-link" href="{% url 'login' %}">Log in</a>
                     {% endif %}
                 </li>
             </ul>
