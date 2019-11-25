@@ -10,9 +10,12 @@
 
     <title>{% block title %}EvalHub{% endblock %}</title>
   </head>
+  <br><br><br><br>
   <body>
     {% include 'evalhubapp/header.html' %}
-    <div class="container" id="main-content">
+    {% block fullwidth %}
+    {% endblock %}
+   <div class="container" id="main-content">
       {% block content %}
       <div class="jumbotron">
         <h1 class="display-4">Coming soon!</h1>
