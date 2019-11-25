@@ -3,6 +3,8 @@ django-survey-and-report~=1.3.11
 django-role-permissions
 django-crispy-forms
 
+django-extensions
+
 # Heroku stuff (including Postgres)
 django-heroku
 dj-database-url

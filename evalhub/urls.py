@@ -28,6 +28,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', evalhub_views.index, name='index'),
     path('auth/', include('django.contrib.auth.urls')),
+    path('evaluations/begin/<int:assignment_id>/', evalhub_views.begin_survey, name='begin_evaluation'),
+    path('evaluations/completed/', evalhub_views.complete_survey, name='complete_evaluation'),
     path('evaluations/', evalhub_views.list_surveys, name='evaluations'),
 ]
 

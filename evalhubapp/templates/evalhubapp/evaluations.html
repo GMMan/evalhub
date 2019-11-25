@@ -21,7 +21,7 @@
                         <tbody>
                             {% for evaluation in active %}
                                 <tr>
-                                    <td>{{ evaluation.pk }}</td>
+                                    <td><a href="{% url 'begin_evaluation' evaluation.pk %}">{{ evaluation.survey.name }}</a></td>
                                     <td>{{ evaluation.expires_on|default:'No due date' }}</td>
                                 </tr>
                             {% endfor %}
@@ -47,7 +47,7 @@
                         <tbody>
                             {% for evaluation in completed %}
                                 <tr>
-                                    <td>{{ evaluation.pk }}</td>
+                                    <td>{{ evaluation.survey.name }}</td>
                                     <td>{{ evaluation.completed_on }}</td>
                                 </tr>
                             {% endfor %}
@@ -73,7 +73,7 @@
                         <tbody>
                             {% for evaluation in expired %}
                                 <tr>
-                                    <td>{{ evaluation.pk }}</td>
+                                    <td>{{ evaluation.survey.name }}</td>
                                     <td>{{ evaluation.expires_on|default:'No due date' }}</td>
                                 </tr>
                             {% endfor %}

@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+from survey.models.survey import Survey
+
 # Create your models here.
 
 
@@ -30,6 +32,7 @@ class SurveyAssignment(models.Model):
     assignee = models.ForeignKey(DaycareUser, on_delete=models.CASCADE)
     completed_on = models.DateTimeField(null=True, blank=True)
     expires_on = models.DateTimeField(null=True, blank=True)
+    survey = models.ForeignKey(Survey, on_delete=models.CASCADE, null=False, blank=False)
 
     @property
     def is_completed(self):

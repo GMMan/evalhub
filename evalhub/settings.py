@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'bootstrapform',
     'crispy_forms',
     'survey',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
