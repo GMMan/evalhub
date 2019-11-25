@@ -50,7 +50,7 @@ def begin_survey(request, assignment_id):
 @login_required
 def complete_survey(request):
     context = {}
-    if not request.session['assignment_id']:
+    if 'assignment_id' not in request.session:
         context['error_message'] = 'Invalid evaluation submission.'
         return render(request, 'evalhubapp/evaluation_denied.html', context)
 

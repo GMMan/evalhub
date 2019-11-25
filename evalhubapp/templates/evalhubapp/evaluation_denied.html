@@ -2,7 +2,7 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-sm-12 col-md-6 border rounded p-3">
-        <div class="alert alert-error" role="alert">
+        <div class="alert alert-danger" role="alert">
             You cannot access this evaluation: {{ error_message }}
         </div>
         <a href="{% url 'evaluations' %}" class="btn btn-primary" role="button">Go back to evaluations list</a>
