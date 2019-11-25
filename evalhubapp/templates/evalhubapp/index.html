@@ -4,13 +4,21 @@
     <div class="row no-gutters h-100 align-items-center">
       <div class="col-12 text-center">
         <h1 class="font-weight-light">Welcome to EvalHub!</h1>
-        <p class="lead">
-          If you are a daycare manager, <a href="{% url 'login' %}">click here</a> to log in.<br>
-          If you don't have an account, please contact your evaluator for an invite link.
-        </p>
-        <p class="lead">
-          If you are an evaluator, please <a href="{% url 'login' %}">log in</a>.
-        </p>
+        {% if user.is_authenticated %}
+          {% if user.is_staff %}
+            <a href="{% url 'admin:index' %}" class="btn btn-primary" role="button">Manage EvalHub</a>
+          {% else %}
+            <a href="{% url 'evaluations' %}" class="btn btn-primary" role="button">Manage my evaluations</a>
+          {% endif %}
+        {% else %}
+          <p class="lead">
+            If you are a daycare manager, <a href="{% url 'login' %}">click here</a> to log in.<br>
+            If you don't have an account, please contact your evaluator for an invite link.
+          </p>
+          <p class="lead">
+            If you are an evaluator, please <a href="{% url 'login' %}">log in</a>.
+          </p>
+        {% endif %}
       </div>
     </div>
   </div>
