@@ -1,0 +1,88 @@
+{% extends 'evalhubapp/base.html' %}
+{% block content %}
+    <h1>Your evaluations</h1>
+    {% if is_staff %}
+        <p class="mt-3">
+            You are staff. Please manage evaluations on the
+            <a href="{% url 'admin:index' %}">admin site</a>.
+        </p>
+    {% else %}
+        <div class="border rounded p-3 mt-3">
+            <h2>Active evaluations</h2>
+            <div class="mt-3">
+                {% if active %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 70%">Name</th>
+                                <th scope="col" style="width: 30%">Due</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for evaluation in active %}
+                                <tr>
+                                    <td>{{ evaluation.pk }}</td>
+                                    <td>{{ evaluation.expires_on|default:'No due date' }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>You have no active evaluations.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="border rounded p-3 mt-3">
+            <h2>Completed evaluations</h2>
+            <div class="mt-3">
+                {% if completed %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 70%">Name</th>
+                                <th scope="col" style="width: 30%">Completed on</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for evaluation in completed %}
+                                <tr>
+                                    <td>{{ evaluation.pk }}</td>
+                                    <td>{{ evaluation.completed_on }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>You have no completed evaluations.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="border rounded p-3 mt-3">
+            <h2>Expired evaluations</h2>
+            <div class="mt-3">
+                {% if expired %}
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width: 70%">Name</th>
+                                <th scope="col" style="width: 30%">Due</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for evaluation in expired %}
+                                <tr>
+                                    <td>{{ evaluation.pk }}</td>
+                                    <td>{{ evaluation.expires_on|default:'No due date' }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <p>You have no expired evaluations.</p>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

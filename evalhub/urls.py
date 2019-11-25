@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', evalhub_views.index, name='index'),
     path('auth/', include('django.contrib.auth.urls')),
+    path('evaluations/', evalhub_views.list_surveys, name='evaluations'),
 ]
 
 if 'survey' in settings.INSTALLED_APPS:
