@@ -1,4 +1,4 @@
-Django==2.2.7
+Django==2.2.21
 django-survey-and-report~=1.3.11
 django-role-permissions
 django-crispy-forms
